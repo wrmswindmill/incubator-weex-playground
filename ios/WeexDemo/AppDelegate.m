@@ -19,6 +19,7 @@
 
 #import "AppDelegate.h"
 #import "WXDemoViewController.h"
+#import "WXFirstViewController.h"
 #import "UIViewController+WXDemoNaviBar.h"
 #import "WXEventModule.h"
 #import "WXImgLoaderDefaultImpl.h"
@@ -167,8 +168,7 @@
 
 - (UIViewController *)demoController
 {
-    UIViewController *demo = [[WXDemoViewController alloc] init];
-    ((WXDemoViewController *)demo).url = [NSURL URLWithString:BUNDLE_URL];
+    UIViewController *demo = [[WXFirstViewController alloc] init];
     return demo;
 }
 

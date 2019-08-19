@@ -49,9 +49,58 @@
 {
     if (self = [super init]) {
     }
-    
     return self;
 }
+
+
+- (instancetype)initWithName:(NSString *)newUrl symbol:(NSString *)newSymbol {
+    if (self = [super init]) {
+        self.url = [self openURL:newUrl];
+        self.symbol = newSymbol;
+    }
+    return self;
+}
+
+
+- (NSString *)createWeexURL:(NSString*)URL{
+    NSString *prefix = @"http://dotwe.org/vue/";
+    NSString* hash = [URL substringFromIndex:prefix.length];
+    NSString* url =  [@"http://dotwe.org/raw/dist/" stringByAppendingFormat:@"%@%@",hash, @".bundle.wx"];
+    NSString* weexUrl = [url stringByAppendingFormat:@"%@%@",@"?_wx_tpl=", url];
+    return weexUrl;
+}
+
+//function createURL(hash, params) {
+//    if (WXEnvironment.platform === 'Web') {
+//        return 'http://dotwe.org/raw/htmlVue/' + hash;
+//    }
+//    var url = 'http://dotwe.org/raw/dist/' + hash + '.bundle.wx';
+//    var paramString = encodeParams(params);
+//    if (WXEnvironment.appName === 'TB') {
+//        return url + '?_wx_tpl=' + url + '&' + paramString;
+//    }
+//    if (WXEnvironment.appName === 'WXSample') {
+//        return url + '?' + paramString;
+//    }
+//    return url + '?wx_weex=true&' + paramString;
+//}
+
+- (NSURL *)openURL:(NSString*)URL{
+    NSString *transformURL = [self createWeexURL:URL];
+    NSArray* elts = [URL componentsSeparatedByString:@"?"];
+    if (elts.count >= 2) {
+        NSArray *urls = [elts.lastObject componentsSeparatedByString:@"="];
+        for (NSString *param in urls) {
+            if ([param isEqualToString:@"_wx_tpl"]) {
+                transformURL = [[urls lastObject]  stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                break;
+            }
+        }
+    }
+    NSURL *url = [NSURL URLWithString:transformURL];
+    return url;
+}
+
 
 - (void)setInterfaceOrientation:(UIDeviceOrientation)orientation
 {
@@ -86,7 +135,24 @@
     [_instance isKeepingRawCssStyles:^(BOOL value) {
         appDelegate.allowRotation = value;
     }];
+    [self detectionTask];
 }
+
+- (void)detectionTask{
+    
+}
+
+- (void)sendResult:(NSString*)result{
+    // send result to js
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:result message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (void)viewDidDisappear:(BOOL)animated
 {

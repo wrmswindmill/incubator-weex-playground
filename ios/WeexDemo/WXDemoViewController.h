@@ -27,6 +27,11 @@
 @property (nonatomic, assign) BOOL showNavigationBar;
 @property (nonatomic, strong) SRWebSocket *hotReloadSocket;
 @property (nonatomic, strong) NSString *source;
+@property (nonatomic, strong) NSString* symbol;
 
+//- (void)backButtonClicked:(id)sender;
+- (instancetype)initWithName:(NSString *)newUrl symbol:(NSString *)newSymbol;
+- (void)detectionTask;
+- (void)sendResult:(NSString*)result;
 @end
 
