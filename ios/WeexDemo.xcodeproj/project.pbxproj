@@ -293,7 +293,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B28E0AE2230B038C00921E45 /* core */ = {
+		B28E0AEB230B2AFA00921E45 /* core */ = {
 			isa = PBXGroup;
 			children = (
 				775BEE811C1E8ECC008D1629 /* AppDelegate.h */,
@@ -307,13 +307,13 @@
 				B28E0AE4230B059F00921E45 /* TestTask.h */,
 				B28E0AE5230B059F00921E45 /* TestTask.m */,
 			);
-			name = core;
+			path = core;
 			sourceTree = "<group>";
 		};
 		D5ADF0861C77133B00597CA6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B28E0AE2230B038C00921E45 /* core */,
+				B28E0AEB230B2AFA00921E45 /* core */,
 				2AE88A291C8544D7003329DE /* scanner */,
 				DCABAFED1D029642001C8592 /* debug */,
 				74CC79E91C2B9E4700829368 /* UIViewController+WXDemoNaviBar.h */,

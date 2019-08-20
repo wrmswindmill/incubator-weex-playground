@@ -116,7 +116,6 @@
     
     WXDemoViewController * controller = [[WXDemoViewController alloc] init];
     controller.url = url;
-    controller.symbol = symbol;
     [[self navigationController] pushViewController:controller animated:YES];
 }
 

@@ -46,11 +46,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeexDemo/Scanner/WXScannerVC.m"
-            timestampString = "587934088.383049"
+            timestampString = "587989368.039588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -78,7 +78,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeexDemo/WXNavigationHandlerImpl.m"
-            timestampString = "587934088.383191"
+            timestampString = "587989368.039861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"

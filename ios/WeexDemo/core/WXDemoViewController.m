@@ -53,10 +53,10 @@
 }
 
 
-- (instancetype)initWithName:(NSString *)newUrl symbol:(NSString *)newSymbol {
+- (instancetype)initWithName:(NSString *)newUrl  { //symbol:(NSString *)newSymbol
     if (self = [super init]) {
         self.url = [self openURL:newUrl];
-        self.symbol = newSymbol;
+//        self.symbol = newSymbol;
     }
     return self;
 }
@@ -135,22 +135,14 @@
     [_instance isKeepingRawCssStyles:^(BOOL value) {
         appDelegate.allowRotation = value;
     }];
-    [self detectionTask];
 }
 
-- (void)detectionTask{
+- (void)detectionTask:(NSString*)symbol{
     
 }
 
 - (void)sendResult:(NSString*)result{
-    // send result to js
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:result message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:cancel];
-    [alert addAction:ok];
-    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 
