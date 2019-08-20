@@ -36,12 +36,12 @@ script:
           # build project and output .app
           xcodebuild -quiet -workspace WeexDemo.xcworkspace -scheme WeexDemo CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 6" -derivedDataPath build
           # zip WeexDemo.app
-          cd  build/Build/Products/Debug-iphonesimulator/WeexDemo.app
+          cd  build/Build/Products/Debug-iphonesimulator/
           zip -r WeexDemo.app.zip WeexDemo.app
           # upload file to sauceLab server
           curl -u "renmin:6b19f4d0-7119-4151-9acd-a5f39d242167" -X POST -H "Content-Type: application/octet-stream" https://saucelabs.com/rest/v1/storage/renmin/weexplayground-ios.zip\?overwrite\=true --data-binary @WeexDemo.app.zip
           # run e2e test
-          cd $HOME/e2eTest && python appium-ios-test.py
+          cd ../../../../../e2eTest &&  python appium-ios-test.py
         fi
         ;;
     esac
