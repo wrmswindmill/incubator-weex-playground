@@ -34,7 +34,7 @@ script:
         echo "The value of hasIosFile is ${hasIosFile}"
         if [[ "$hasIosFile" =~ "hasIosFile" ]]; then
           # build project and output .app
-          xcodebuild -workspace WeexDemo.xcworkspace -scheme WeexDemo CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 6" -derivedDataPath build
+          xcodebuild -quiet -workspace WeexDemo.xcworkspace -scheme WeexDemo CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 6" -derivedDataPath build
           # zip WeexDemo.app
           cd  build/Build/Products/Debug-iphonesimulator/WeexDemo.app
           zip -r WeexDemo.app.zip WeexDemo.app
