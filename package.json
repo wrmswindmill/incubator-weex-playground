@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Playground for Apache Weex, demo purpose only",
   "scripts": {
-    "danger": "danger"
+    "danger": "danger",
+    "build:ci": "webpack --config common/build/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   },
   "homepage": "https://github.com/apache/incubator-weex-playground#readme",
   "dependencies": {
-    "danger": "^0.18.0"
+    "babel-loader": "^6.2.4",
+    "babel-core": "^6.10.4",
+    "danger": "^0.18.0",
+    "weex-loader": "^0.7.12",
+    "webpack": "~1.13.0"
   }
 }

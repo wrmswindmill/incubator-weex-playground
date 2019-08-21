@@ -38,6 +38,7 @@
 #import "WXApmGeneratorImpl.h"
 #import "WXWebSocketDefaultImpl.h"
 #import <WeexPluginLoader/WeexPluginLoader.h>
+#import "WXDetectionTaskModule.h"
 
 #ifdef DEBUG
 #import "DebugAnalyzer.h"
@@ -47,6 +48,7 @@
 @end
 
 @implementation AppDelegate
+
 
 #pragma mark
 #pragma mark application
@@ -142,7 +144,9 @@
     [WXSDKEngine registerModule:@"titleBar" withClass:NSClassFromString(@"WXTitleBarModule")];
     [WXSDKEngine registerExtendCallNative:@"test" withClass:NSClassFromString(@"WXExtendCallNativeTest")];
     [WXSDKEngine registerModule:@"ext" withClass:[WXExtModule class]];
+    [WXSDKEngine registerModule:@"e2eTest" withClass:[WXDetectionTaskModule class]];
     [WPRegister registerPlugins];
+    
 #ifdef DEBUG
     [WXAnalyzerCenter addWxAnalyzer:[DebugAnalyzer new]];
 #endif
@@ -167,8 +171,14 @@
 
 - (UIViewController *)demoController
 {
+    NSString *buildConfiguration = [[NSProcessInfo processInfo] environment][@"IS_E2E"];
     UIViewController *demo = [[WXDemoViewController alloc] init];
-    ((WXDemoViewController *)demo).url = [NSURL URLWithString:BUNDLE_URL];
+    if([buildConfiguration  isEqual: @"true"]){
+         NSURL *url = [NSURL URLWithString:@"http://dotwe.org/raw/dist/98850cfae63af922aa9889e6703ca38e.bundle.wx?_wx_tpl=http://dotwe.org/raw/dist/98850cfae63af922aa9889e6703ca38e.bundle.wx"];
+        ((WXDemoViewController *)demo).url = url;
+    }else{
+        ((WXDemoViewController *)demo).url = [NSURL URLWithString:BUNDLE_URL];
+    }
     return demo;
 }
 
