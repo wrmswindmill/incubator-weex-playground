@@ -19,12 +19,11 @@
 
 #import "AppDelegate.h"
 #import "WXDemoViewController.h"
+#import "WXFirstViewController.h"
 #import "UIViewController+WXDemoNaviBar.h"
 #import "WXEventModule.h"
 #import "WXImgLoaderDefaultImpl.h"
 #import "DemoDefine.h"
-#import "WXScannerVC.h"
-#import "WXScannerHistoryVC.h"
 #import "WXSyncTestModule.h"
 #import "WXExtModule.h"
 #import "UIView+UIThreadCheck.h"
@@ -38,6 +37,7 @@
 #import "WXApmGeneratorImpl.h"
 #import "WXWebSocketDefaultImpl.h"
 #import <WeexPluginLoader/WeexPluginLoader.h>
+#import "WXTestViewController.h"
 
 #ifdef DEBUG
 #import "DebugAnalyzer.h"
@@ -61,7 +61,7 @@
     self.window.rootViewController = [[WXRootViewController alloc] initWithRootViewController:[self demoController]];
     [self.window makeKeyAndVisible];
     
-    [self startSplashScreen];
+//    [self startSplashScreen];
     
 #if DEBUG
     // check if there are any UI changes on main thread.
@@ -83,14 +83,7 @@
 
 -(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
-    if ([shortcutItem.type isEqualToString:QRSCAN]) {
-        WXScannerVC * scanViewController = [[WXScannerVC alloc] init];
-        [(WXRootViewController*)self.window.rootViewController pushViewController:scanViewController animated:YES];
-    }
-    if ([shortcutItem.type isEqualToString:QRSCAN_HISTORY]) {
-        WXScannerHistoryVC *scannerHistoryVC = [WXScannerHistoryVC new];
-        [(WXRootViewController*)self.window.rootViewController pushViewController:scannerHistoryVC animated:YES];
-    }
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -142,33 +135,18 @@
     [WXSDKEngine registerModule:@"titleBar" withClass:NSClassFromString(@"WXTitleBarModule")];
     [WXSDKEngine registerExtendCallNative:@"test" withClass:NSClassFromString(@"WXExtendCallNativeTest")];
     [WXSDKEngine registerModule:@"ext" withClass:[WXExtModule class]];
+    [WXSDKEngine registerModule:@"e2eTest" withClass:[WXTestViewController class]];
     [WPRegister registerPlugins];
-#ifdef DEBUG
+    // Debug
     [WXAnalyzerCenter addWxAnalyzer:[DebugAnalyzer new]];
-#endif
-    
-#if !(TARGET_IPHONE_SIMULATOR)
-    [self checkUpdate];
-#endif
-    
-#ifdef DEBUG
-    [self atAddPlugin];
-    [WXDebugTool setDebug:YES];
-    [WXLog setLogLevel:WXLogLevelLog];
-    
-    #ifndef UITEST
-        [[ATManager shareInstance] show];
-    #endif
-#else
     [WXDebugTool setDebug:NO];
     [WXLog setLogLevel:WXLogLevelError];
-#endif
 }
 
 - (UIViewController *)demoController
 {
-    UIViewController *demo = [[WXDemoViewController alloc] init];
-    ((WXDemoViewController *)demo).url = [NSURL URLWithString:BUNDLE_URL];
+    UIViewController *demo = [[WXFirstViewController alloc] init];
+//    WXDemoViewController *demo = [[WXDemoViewController alloc] initWithUrlString:@"http://dotwe.org/vue/8d28476fdcc7dd8f0efa674892e83829"];
     return demo;
 }
 

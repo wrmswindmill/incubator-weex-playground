@@ -18,8 +18,6 @@
  */
 
 #import "UIViewController+WXDemoNaviBar.h"
-#import "WXScannerVC.h"
-#import "WXScannerHistoryVC.h"
 #import "WXDefine.h"
 #import <objc/runtime.h>
 
@@ -49,20 +47,6 @@
         }
         self.navigationItem.leftBarButtonItems = @[leftItem];
     }
-    if ([self isKindOfClass:[WXScannerVC class]]) {
-        UIBarButtonItem *historyItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"scan_history"]
-                                                          style:UIBarButtonItemStylePlain
-                                                         target:self
-                                                         action:@selector(historyButtonClicked:)];
-        self.navigationItem.rightBarButtonItems = @[historyItem];
-    }
-    if([self isKindOfClass:[WXScannerHistoryVC class]]) {
-        UIBarButtonItem *historyItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"delete"]
-                                                                        style:UIBarButtonItemStylePlain
-                                                                       target:self
-                                                                       action:@selector(clearScannerHistory:)];
-        self.navigationItem.rightBarButtonItems = @[historyItem];
-    }
 }
 
 - (void)edgePanGesture:(UIScreenEdgePanGestureRecognizer*)edgePanGestureRecognizer
@@ -85,17 +69,6 @@
 - (UIBarButtonItem *)leftBarButtonItem
 {
     UIBarButtonItem *leftItem = objc_getAssociatedObject(self, _cmd);
-    
-    if (!leftItem) {
-        leftItem = [[UIBarButtonItem alloc]
-                    initWithImage:[UIImage imageNamed:@"scan"]
-                     style:UIBarButtonItemStylePlain
-                    target:self
-                    action:@selector(scanQR:)];
-        leftItem.accessibilityHint = @"click to scan qr code";
-        leftItem.accessibilityValue = @"scan qr code";
-        objc_setAssociatedObject(self, _cmd, leftItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
     return leftItem;
 }
 
@@ -115,24 +88,10 @@
 #pragma mark -
 #pragma mark - UIBarButtonItem actions
 
-- (void)scanQR:(id)sender {
-    
-    WXScannerVC * scanViewController = [[WXScannerVC alloc] init];
-    [self.navigationController pushViewController:scanViewController animated:YES];
-}
-
 - (void)backButtonClicked:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)historyButtonClicked:(id)sender {
-    
-    [self.navigationController pushViewController:[WXScannerHistoryVC new] animated:YES];
-}
-
-- (void)clearScannerHistory:(id)sender {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:WX_SCANNER_HISTORY];
-}
 
 @end
