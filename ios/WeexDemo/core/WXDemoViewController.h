@@ -30,7 +30,7 @@
 //@property (nonatomic, strong) NSString* symbol;
 
 //- (void)backButtonClicked:(id)sender;
-- (instancetype)initWithName:(NSString *)newUrl;// symbol:(NSString *)newSymbol
+- (instancetype)initWithUrlString:(NSString *)newUrl;// symbol:(NSString *)newSymbol
 - (void)detectionTask:(NSString*)symbol;
 - (void)sendResult:(NSString*)result;
 @end

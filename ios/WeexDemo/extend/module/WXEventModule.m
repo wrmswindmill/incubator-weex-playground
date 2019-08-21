@@ -19,7 +19,6 @@
 
 #import "WXEventModule.h"
 #import "WXDemoViewController.h"
-#import "WXScannerVC.h"
 #import <WeexSDK/WeexSDK.h>
 
 @implementation WXEventModule
@@ -36,8 +35,6 @@ WX_EXPORT_METHOD(@selector(fireNativeGlobalEvent:callback:))
     if ([url hasPrefix:@"//"]) {
         newURL = [NSString stringWithFormat:@"http:%@", url];
     } else if ([url hasPrefix:@"weex://go/scan"]){
-        WXScannerVC * sannerVC = [WXScannerVC new];
-        [[weexInstance.viewController navigationController] pushViewController:sannerVC animated:YES];
         return;
     } else if (![url hasPrefix:@"http"]) {
         // relative path

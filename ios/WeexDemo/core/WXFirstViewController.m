@@ -70,7 +70,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;{
     TestTask* task = [self.data objectAtIndex:indexPath.row];
-    WXDemoViewController * controller = [[WXDemoViewController alloc] initWithName:task.url]; //symbol:task.name
+    WXDemoViewController * controller = [[WXDemoViewController alloc] initWithUrlString:task.url]; //symbol:task.name
     [[self navigationController] pushViewController:controller animated:YES];
     //[self jsReplace:url];
 }

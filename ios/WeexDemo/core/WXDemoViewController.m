@@ -53,7 +53,7 @@
 }
 
 
-- (instancetype)initWithName:(NSString *)newUrl  { //symbol:(NSString *)newSymbol
+- (instancetype)initWithUrlString:(NSString *)newUrl  { //symbol:(NSString *)newSymbol
     if (self = [super init]) {
         self.url = [self openURL:newUrl];
 //        self.symbol = newSymbol;
