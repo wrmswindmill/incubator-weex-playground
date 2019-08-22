@@ -35,11 +35,11 @@ script:
         echo "The value of hasIosFile is ${hasIosFile}"
         if [[ "$hasIosFile" =~ "hasIosFile" ]]; then
           # convert App.vue to e2e-landing.js
-          cp common/App.vue vue-build/webpack/template/ && cd vue-build/webpack/template/
+          cp common/App.vue vue-build/ && cd vue-build/
           npm install
           npm run build:weex
           # cp App.js to ios project
-          cp e2e-landing.js ../../../ios/bundlejs/ && cd ../../../ios/
+          cp e2e-landing.js ../ios/bundlejs/ && cd ../ios/
           # build project and output .app
           xcodebuild -quiet -workspace WeexDemo.xcworkspace -scheme WeexDemo CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 6" -derivedDataPath build
           # zip WeexDemo.app
