@@ -173,11 +173,10 @@
 {
     NSString *buildConfiguration = [[NSProcessInfo processInfo] environment][@"IS_E2E"];
     UIViewController *demo = [[WXDemoViewController alloc] init];
-    if([buildConfiguration  isEqual: @"true"]){
-         NSURL *url = [NSURL URLWithString:@"http://dotwe.org/raw/dist/98850cfae63af922aa9889e6703ca38e.bundle.wx?_wx_tpl=http://dotwe.org/raw/dist/98850cfae63af922aa9889e6703ca38e.bundle.wx"];
-        ((WXDemoViewController *)demo).url = url;
-    }else{
+    if([buildConfiguration  isEqual: @"false"]){
         ((WXDemoViewController *)demo).url = [NSURL URLWithString:BUNDLE_URL];
+    }else{
+        ((WXDemoViewController *)demo).url = [NSURL URLWithString:E2E_URL];
     }
     return demo;
 }

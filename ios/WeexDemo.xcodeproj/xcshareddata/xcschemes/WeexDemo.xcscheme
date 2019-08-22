@@ -89,6 +89,11 @@
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
+            key = "IS_E2E"
+            value = "false"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "JSC_logGC"
             value = "1"
             isEnabled = "NO">
