@@ -52,6 +52,7 @@ import com.taobao.weex.WXSDKManager;
 import com.taobao.weex.bridge.WXBridgeManager;
 import com.taobao.weex.common.WXException;
 import com.taobao.weex.performance.WXAnalyzerDataTransfer;
+import com.alibaba.weex.e2e.WXDetecionTaskModule;
 
 import java.lang.reflect.Method;
 
@@ -110,7 +111,8 @@ public class WXApplication extends Application {
       WXSDKEngine.registerModule("titleBar", WXTitleBar.class);
 
       WXSDKEngine.registerModule("wsonTest", WXWsonTestModule.class);
-
+      WXSDKEngine.registerModule("wsonTest", WXWsonTestModule.class);
+      WXSDKEngine.registerModule("e2eTest",WXDetecionTaskModule.class);
       BindingX.register();
 
       /**

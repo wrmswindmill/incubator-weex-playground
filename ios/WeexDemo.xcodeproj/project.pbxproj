@@ -15,6 +15,7 @@
 		3375BEE921C74C5C003CAAB8 /* SRWebSocket+Weex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3375BEE721C74C5C003CAAB8 /* SRWebSocket+Weex.m */; };
 		564B94671DD9C65000441C8D /* WeexUITestDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 564B94661DD9C65000441C8D /* WeexUITestDemo-Info.plist */; };
 		59EA0DA71D2E7D19004F904A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EA0DA61D2E7D19004F904A /* Images.xcassets */; };
+		6D80D48F712EA6BD280DAE5C /* libPods-WeexDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38DA03791A8B9A43F62113CD /* libPods-WeexDemo.a */; };
 		7478481E1E0CD4910044500D /* WXSyncTestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7478481D1E0CD4910044500D /* WXSyncTestModule.m */; };
 		747DF6681E2F176A005C53A8 /* UIView+UIThreadCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 747DF6671E2F176A005C53A8 /* UIView+UIThreadCheck.m */; };
 		74CC79EB1C2B9E4700829368 /* UIViewController+WXDemoNaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC79EA1C2B9E4700829368 /* UIViewController+WXDemoNaviBar.m */; };
@@ -38,6 +39,7 @@
 		847CAF311F39E3F100551725 /* WXExtModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CAF301F39E3F100551725 /* WXExtModule.m */; };
 		84D7CAC71CE3266C00D48D46 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */; };
 		8A0B5EFFF75BF82EA481983D /* libPods-WeexUITestDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48C20F443AA337D1FE97622 /* libPods-WeexUITestDemo.a */; };
+		B2373286230CEA750073DF36 /* WXDetectionTaskModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B2373285230CEA750073DF36 /* WXDetectionTaskModule.m */; };
 		B83A6C5220FF16D50053BCEF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B83A6C5120FF16D50053BCEF /* libc++.tbd */; };
 		C43CDA031F1C6E01005A6B03 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C43CDA021F1C6E01005A6B03 /* libz.tbd */; };
 		C47B78D21F299E27001D3B0C /* WXExtendCallNativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C47B78D11F299E27001D3B0C /* WXExtendCallNativeTest.m */; };
@@ -56,7 +58,7 @@
 		DCABAFFE1D029753001C8592 /* WXImgLoaderDefaultImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = DCABAFFD1D029753001C8592 /* WXImgLoaderDefaultImpl.m */; };
 		DCABB0011D02975E001C8592 /* WXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DCABB0001D02975E001C8592 /* WXEventModule.m */; };
 		DCD286E01CF491AC00C601CA /* weex-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD286DF1CF491AC00C601CA /* weex-icon.png */; };
-		EAEC716BE3E43DBC8494EC51 /* libPods-WeexDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7601607D735D7F8D88971230 /* libPods-WeexDemo.a */; };
+		EAEC716BE3E43DBC8494EC51 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 		3375BEE521C74C5C003CAAB8 /* WXWebSocketDefaultImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebSocketDefaultImpl.m; sourceTree = "<group>"; };
 		3375BEE621C74C5C003CAAB8 /* WXWebSocketDefaultImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebSocketDefaultImpl.h; sourceTree = "<group>"; };
 		3375BEE721C74C5C003CAAB8 /* SRWebSocket+Weex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SRWebSocket+Weex.m"; sourceTree = "<group>"; };
+		38DA03791A8B9A43F62113CD /* libPods-WeexDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeexDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		564B94661DD9C65000441C8D /* WeexUITestDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WeexUITestDemo-Info.plist"; sourceTree = "<group>"; };
 		59EA0DA61D2E7D19004F904A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5AF8846546DAC65CAC038806 /* Pods-WeexDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 		847CAF2F1F39E3F100551725 /* WXExtModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXExtModule.h; sourceTree = "<group>"; };
 		847CAF301F39E3F100551725 /* WXExtModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXExtModule.m; sourceTree = "<group>"; };
 		9420131417A731ED089B0814 /* Pods-WeexDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B2373284230CEA750073DF36 /* WXDetectionTaskModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXDetectionTaskModule.h; sourceTree = "<group>"; };
+		B2373285230CEA750073DF36 /* WXDetectionTaskModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXDetectionTaskModule.m; sourceTree = "<group>"; };
 		B83A6C5120FF16D50053BCEF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C43CDA021F1C6E01005A6B03 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C47B78D01F299E27001D3B0C /* WXExtendCallNativeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXExtendCallNativeTest.h; sourceTree = "<group>"; };
@@ -149,7 +154,8 @@
 				B83A6C5220FF16D50053BCEF /* libc++.tbd in Frameworks */,
 				C43CDA031F1C6E01005A6B03 /* libz.tbd in Frameworks */,
 				DC6DD9D21CFE9BC400549297 /* libsqlite3.0.tbd in Frameworks */,
-				EAEC716BE3E43DBC8494EC51 /* libPods-WeexDemo.a in Frameworks */,
+				EAEC716BE3E43DBC8494EC51 /* (null) in Frameworks */,
+				6D80D48F712EA6BD280DAE5C /* libPods-WeexDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +197,7 @@
 				741DFE081DDDD519009B020F /* libstdc++.tbd */,
 				7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */,
 				E48C20F443AA337D1FE97622 /* libPods-WeexUITestDemo.a */,
+				38DA03791A8B9A43F62113CD /* libPods-WeexDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 		74CC79EC1C2B9FC600829368 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				B2373287230CEC000073DF36 /* e2eTestModule */,
 				DCABAFF51D0296DB001C8592 /* extend */,
 				D5ADF0861C77133B00597CA6 /* Source */,
 			);
@@ -277,6 +285,15 @@
 				1888E2C5769382461DEDC97D /* Pods-WeexUITestDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2373287230CEC000073DF36 /* e2eTestModule */ = {
+			isa = PBXGroup;
+			children = (
+				B2373285230CEA750073DF36 /* WXDetectionTaskModule.m */,
+				B2373284230CEA750073DF36 /* WXDetectionTaskModule.h */,
+			);
+			path = e2eTestModule;
 			sourceTree = "<group>";
 		};
 		D5ADF0861C77133B00597CA6 /* Source */ = {
@@ -631,6 +648,7 @@
 			files = (
 				17C1DB57206B675D000E0CEB /* DebugAnzlyzer.m in Sources */,
 				DCABAFF31D029685001C8592 /* WXATLoggerPlugin.m in Sources */,
+				B2373286230CEA750073DF36 /* WXDetectionTaskModule.m in Sources */,
 				DC15A3D0200E30FC009C8977 /* WXNavigationHandlerImpl.m in Sources */,
 				3375BEE921C74C5C003CAAB8 /* SRWebSocket+Weex.m in Sources */,
 				2AE88A2C1C8544E6003329DE /* WXScannerVC.m in Sources */,
